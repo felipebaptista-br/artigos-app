@@ -6,12 +6,11 @@ import api from "../../services/api";
 import "./style.css"
 
 export default function Article(data) {
+    const [id, setData] = useState(data.data._id);
     const [items, setItems] = useState([]);
     const [page, setPage] = useState();
     const [zoom, setZoom] = useState("100%");
     const [dark, setDark] = useState(false);
-    const id = data.data._id;
-    console.log(id);
 
     async function handleDark() {
         if (dark === false) {
@@ -49,24 +48,9 @@ export default function Article(data) {
         document.body.style.zoom = zoom;
     }
 
-    async function IncreaseZoom() {
-        switch (zoom) {
-            case "100%":
-                setZoom("110%")
-                break;
-            case "110%":
-                setZoom("120%")
-                break;
-            default:
-                break;
-        }
-        document.body.style.zoom = zoom;
-    }
-
     useEffect(() => {
         api.get("/list").then((response) => {
             setItems(response.data);
-            console.log(response.data);
         });
     }, []);
 
