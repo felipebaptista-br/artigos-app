@@ -2,7 +2,7 @@ const { json } = require("express");
 const express = require("express");
 const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 5000;
 const articleRoute = require("./routes/routes");
 
 app.use(function (req, res, next) {
@@ -14,7 +14,7 @@ app.use(function (req, res, next) {
 
 app.use(express.json())
 
-// tudo que usar essa rota será direcionado para o todoRoute
+// tudo que usar essa rota será direcionado para o articleRoute
 app.use("/article", articleRoute);
 
 app.listen(port, () => {

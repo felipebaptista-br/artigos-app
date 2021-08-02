@@ -1,0 +1,14 @@
+#main_Dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+#content_Dashboard {
+    max-width: 1200px;
+    min-width: 1200px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    margin: 4rem 10rem;    
+}
